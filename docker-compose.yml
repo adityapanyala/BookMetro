@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  web:
+    image: bmt-app
+    ports:
+      - "8099:8080"
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: university
+    ports:
+      - "3309:3306"
